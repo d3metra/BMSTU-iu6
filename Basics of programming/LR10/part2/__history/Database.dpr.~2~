@@ -1,0 +1,16 @@
+program Database;
+
+uses
+  Vcl.Forms,
+  MainForm_unit in 'MainForm_unit.pas' {MainForm},
+  WriteForm_unit in 'WriteForm_unit.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TMainForm, MainForm);
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

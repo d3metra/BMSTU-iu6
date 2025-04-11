@@ -1,0 +1,20 @@
+program Lab7;
+{$APPTYPE CONSOLE}
+uses System.SysUtils;
+var a: array['A'..'D','x'..'y'] of real;
+    b: array[1..25,'x'..'y'] of real;
+    i,j:Char;
+begin
+writeln ('Введите последовательно абсциссы и ординаты вершин выпуклого четырехугольника');
+for i := 'A' to 'D' do
+    begin
+         read (a[i,'x'], a[i,'y']);
+         readln;
+    end;
+
+writeln ('Полученные координаты вершин четырёхугольника');
+for i := 'A' to 'D' do
+   writeln (i, ' (',a[i,'x']:5:2, ' , ', a[i,'y']:5:2, ')');
+readln;
+End.
+

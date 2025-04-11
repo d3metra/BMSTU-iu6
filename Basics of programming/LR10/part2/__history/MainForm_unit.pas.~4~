@@ -1,0 +1,38 @@
+unit MainForm_unit;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, WriteForm_unit;
+
+type
+  TMainForm = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+  end;
+
+var
+  MainForm: TMainForm;
+  F: file of zap;
+
+implementation
+
+{$R *.dfm}
+
+  procedure TMainForm.Button1Click(Sender: TObject);
+    begin
+      assignfile (F, 'DataFile.dat');
+      WriteForm.show;
+      WriteForm.Edit1.setfocus;
+    end;
+
+procedure TMainForm.Button3Click(Sender: TObject);
+    begin
+      close;
+    end;
+
+end.

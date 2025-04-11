@@ -1,0 +1,58 @@
+program Lab7;
+{$APPTYPE CONSOLE}
+uses System.SysUtils;
+
+var x: array[1..104,'x'..'y'] of integer;
+    i,m,cnt: integer;
+    S, T: extended;
+    function TrArea (A,B,C: integer): extended;
+        var l1,l2,l3,p: extended;
+        begin
+             l1 := sqrt(sqr(x[C,'x']-x[B,'x']) + sqr(x[C,'y']-x[B,'y']));
+             l2 := sqrt(sqr(x[C,'x']-x[A,'x']) + sqr(x[C,'y']-x[A,'y']));
+             l3 := sqrt(sqr(x[B,'x']-x[A,'x']) + sqr(x[B,'y']-x[A,'y']));
+             p := (l1 + l2 + l3) / 2;
+             Result := sqrt(p*(p-l1)*(p-l2)*(p-l3));
+        end;
+    function SumAreas (A,B,C,D: integer): extended;
+        begin
+             Result := TrArea(A,B,D) + TrArea(A,C,D) + TrArea(B, C, D);
+        end;
+begin
+{Ввод координат вершин четырёхугольника}
+writeln ('Введите последовательно абсциссы и ординаты вершин выпуклого четырехугольника:');
+for i := 1 to 4 do
+    begin
+         read (x[i,'x'], x[i,'y']);
+         readln;
+    end;
+
+{Вывод координат вершин четырёхугольника для проверки}
+writeln ('Полученные координаты вершин четырёхугольника:');
+for i := 1 to 4 do
+   writeln ('Вершина ', i, ' (',x[i,'x'], ' , ', x[i,'y'], ')');
+
+{Ввод координат m точек плоскости}
+writeln ('Введите m<=100 - число точек на плоскости:');
+readln (m);
+writeln ('Координаты точек плоскости');
+for i := 5 to m+4 do
+   begin
+        read (x[i,'x'], x[i,'y']);
+        readln;
+   end;
+
+{Проверка принадлжености точки к четырёхугольнику}
+cnt := 0;
+for i := 5 to m+4 do
+   if (TrArea(1, 2, 3) = SumAreas(1, 2, 3, i))
+     or (TrArea(1, 2, 4) = SumAreas(1, 2, 4, i))
+     or (TrArea(1, 3, 4) = SumAreas(1, 3, 4, i))
+     or (TrArea(2, 3, 4) = SumAreas(2, 3, 4, i))
+   then cnt := cnt + 1;
+if cnt = 0
+  then writeln ('Ни одна из заданных точек плоскости не принадлежит четырёхугольнику')
+  else writeln (cnt, ' из заданных точек плоскости принадлежат четырёхугольнику');
+readln;
+End.
+

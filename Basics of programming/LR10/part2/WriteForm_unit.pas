@@ -1,0 +1,52 @@
+unit WriteForm_unit;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, MainForm_unit;
+
+type
+  TWriteForm = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  end;
+
+var
+  WriteForm: TWriteForm;
+
+implementation
+
+{$R *.dfm}
+
+  procedure TWriteForm.Button1Click(Sender: TObject);
+    var z: zap;
+    begin
+      z.surname := Edit1.text;
+      z.name := Edit2.text;
+      z.phn_num := Edit3.text;
+      z.address := Edit4.text;
+      Edit1.clear;
+      Edit2.clear;
+      Edit3.clear;
+      Edit4.clear;
+      write (F, z);
+      Edit1.setfocus;
+    end;
+
+  procedure TWriteForm.Button2Click(Sender: TObject);
+    begin
+      closefile (F);
+      WriteForm.hide;
+    end;
+end.

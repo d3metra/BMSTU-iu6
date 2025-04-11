@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.127,=C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\Лабораторные\Лабораторная работа № 10\Задание 2\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.952,=C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\Лабораторные\Лабораторная работа № 10\Задание 2\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.871,=C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\Лабораторные\Лабораторная работа № 10\Задание 2\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.053,C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\Лабораторные\Лабораторная работа № 10\Задание 2\SearchForm_unit.pas=C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\Лабораторные\Лабораторная работа № 10\Задание 2\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.127,C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\Лабораторные\Лабораторная работа № 10\Задание 2\WriteForm_unit.pas=C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\Лабораторные\Лабораторная работа № 10\Задание 2\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.589,C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\Лабораторные\Лабораторная работа № 10\Задание 2\Database.dfm=D:\Programms\Delphi\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.589,C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\Лабораторные\Лабораторная работа № 10\Задание 2\Database.pas=D:\Programms\Delphi\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.127,C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\Лабораторные\Лабораторная работа № 10\Задание 2\WriteForm_unit.dfm=C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\Лабораторные\Лабораторная работа № 10\Задание 2\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.007,C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\Лабораторные\Лабораторная работа № 10\Задание 2\Database.dproj=D:\Programms\Delphi\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.033,=D:\Programms\Delphi\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.104,C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\Лабораторные\Лабораторная работа № 10\Задание 2\MainForm_unit.pas=C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\Лабораторные\Лабораторная работа № 10\Задание 2\D_unit.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.053,C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\Лабораторные\Лабораторная работа № 10\Задание 2\SearchForm_unit.dfm=C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\Лабораторные\Лабораторная работа № 10\Задание 2\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.725,C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\Лабораторные\Лабораторная работа № 10\Задание 2\D_unit.dfm=C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\Лабораторные\Лабораторная работа № 10\Задание 2\Database.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.725,C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\Лабораторные\Лабораторная работа № 10\Задание 2\D_unit.pas=C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\Лабораторные\Лабораторная работа № 10\Задание 2\Database.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.104,C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\Лабораторные\Лабораторная работа № 10\Задание 2\MainForm_unit.dfm=C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\Лабораторные\Лабораторная работа № 10\Задание 2\D_unit.dfm</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="MainForm_unit.pas"/>
+    <File Path="MainForm_unit.dfm"/>
+    <File Path="WriteForm_unit.pas"/>
+    <File Path="WriteForm_unit.dfm"/>
+    <File Path="SearchForm_unit.pas"/>
+    <File Path="SearchForm_unit.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

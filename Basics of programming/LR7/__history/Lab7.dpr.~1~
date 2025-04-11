@@ -1,0 +1,9 @@
+program Lab7;
+{$APPTYPE CONSOLE}
+uses
+  System.SysUtils;
+
+var a: array[A..D,x..y];
+begin
+
+end.

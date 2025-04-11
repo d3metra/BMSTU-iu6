@@ -1,0 +1,30 @@
+program Lab8;
+{$APPTYPE CONSOLE}
+
+uses
+  System.SysUtils;
+
+type zap = record
+              Book: string[50];
+              Name: string[50];
+              Data: integer
+           end;
+var F, G: file of zap;
+    a: array [1..15] of zap;
+    i, n: integer;
+
+begin
+//Создание исходного файла F с записями//
+write ('Введите n<=15 - кол-во записей в файле F: ');
+readln (n);
+assign (F,'F.dat');
+rewrite (F);
+for i := 1 to n do
+   begin
+        readln (a[i].Book);
+        readln (a[i].Name);
+        readln (a[i].Data);
+        write (F, a[i]);
+   end;
+closefile(F);
+end.
