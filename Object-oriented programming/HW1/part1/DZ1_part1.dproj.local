@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.816,C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\2ой курс\Домашние задания\Домашнее задание 1\Часть 1\MainForm_Unit.dfm=D:\Programms\Delphi\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.910,=D:\Programms\Delphi\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.547,C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\2ой курс\Домашние задания\Домашнее задание 1\Часть 1\Stairs.pas=D:\Programms\Delphi\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.816,C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\2ой курс\Домашние задания\Домашнее задание 1\Часть 1\MainForm_Unit.pas=D:\Programms\Delphi\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.222,=D:\Programms\Delphi\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.232,C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\2ой курс\Домашние задания\Домашнее задание 1\Часть 1\DZ1_part1.dproj=D:\Programms\Delphi\Project1.dproj</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="MainForm_Unit.pas"/>
+    <File Path="MainForm_Unit.dfm"/>
+    <File Path="Stairs.pas"/>
+  </ProjectSortOrder>
+</BorlandProject>

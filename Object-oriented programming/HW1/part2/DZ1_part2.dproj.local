@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.597,C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\2ой курс\Домашние задания\Домашнее задание 1\Часть 2\DZ1_var21_part2.dproj=D:\Programms\Delphi\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.210,C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\2ой курс\Домашние задания\Домашнее задание 1\Часть 2\Letters.pas=D:\Programms\Delphi\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.581,C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\2ой курс\Домашние задания\Домашнее задание 1\Часть 2\DZ1_part2.dproj=C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\2ой курс\Домашние задания\Домашнее задание 1\Часть 2\DZ1_var21_part2.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.418,=D:\Programms\Delphi\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.296,C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\2ой курс\Домашние задания\Домашнее задание 1\Часть 2\MainUnit.dfm=D:\Programms\Delphi\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.296,C:\Users\Киборг Убыйца\Desktop\Учеба\Программирование\2ой курс\Домашние задания\Домашнее задание 1\Часть 2\MainUnit.pas=D:\Programms\Delphi\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.952,=D:\Programms\Delphi\Unit1.pas</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Letters.pas"/>
+    <File Path="MainUnit.pas"/>
+    <File Path="MainUnit.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

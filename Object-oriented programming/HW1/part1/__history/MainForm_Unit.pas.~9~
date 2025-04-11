@@ -1,0 +1,88 @@
+unit MainForm_Unit;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls;
+
+type
+  TMainForm = class(TForm)
+    ImageOut: TImage;
+    LineStyle: TLabel;
+    Zigzag: TLabel;
+    Line: TLabel;
+    UpStyleButton: TButton;
+    DawnStyleButton: TButton;
+    SolidStyleButton: TButton;
+    DashStyleButton: TButton;
+    DotStyleButton: TButton;
+    DashdotStyleButton: TButton;
+    procedure FormCreate(Sender: TObject);
+    procedure ImageOutMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure UpStyleButtonClick(Sender: TObject);
+    procedure DawnStyleButtonClick(Sender: TObject);
+    procedure SolidStyleButtonClick(Sender: TObject);
+    procedure DashStyleButtonClick(Sender: TObject);
+    procedure DotStyleButtonClick(Sender: TObject);
+    procedure DashdotStyleButtonClick(Sender: TObject);
+  end;
+
+var
+  MainForm: TMainForm;
+
+implementation
+
+uses Stairs;
+
+{$R *.dfm}
+
+var St: TStairs;
+
+  procedure TMainForm.FormCreate(Sender: TObject);
+  begin
+    ImageOut.Canvas.FillRect (ImageOut.Canvas.ClipRect);
+    St := TStairs.Create(ImageOut);
+  end;
+
+  procedure TMainForm.ImageOutMouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+  begin
+    if Button = mbLeft
+      then St.Draw (X, Y);
+    if Button = mbRight
+      then St.FirstPoint;
+
+  end;
+
+ procedure TMainForm.UpStyleButtonClick(Sender: TObject);
+  begin
+    St.ChangeStyleUp;
+  end;
+
+ procedure TMainForm.DawnStyleButtonClick(Sender: TObject);
+  begin
+    St.ChangeStyleDown;
+  end;
+
+  procedure TMainForm.SolidStyleButtonClick(Sender: TObject);
+  begin
+    ImageOut.Canvas.Pen.Style := psSolid;
+  end;
+
+  procedure TMainForm.DashStyleButtonClick(Sender: TObject);
+  begin
+    ImageOut.Canvas.Pen.Style := psDash;
+  end;
+
+  procedure TMainForm.DotStyleButtonClick(Sender: TObject);
+  begin
+    ImageOut.Canvas.Pen.Style := psDot;
+  end;
+
+  procedure TMainForm.DashdotStyleButtonClick(Sender: TObject);
+  begin
+    ImageOut.Canvas.Pen.Style := psDashDot;
+  end;
+end.

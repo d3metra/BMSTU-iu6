@@ -1,0 +1,36 @@
+unit Letters;
+
+interface
+
+Uses Vcl.Graphics, Vcl.ExtCtrls;
+
+type TLetter = class
+       x, y, dx, dy: integer;
+       Image: TImage;
+       constructor Create (ax, ay: integer; img: TImage);
+       procedure Draw (); virtual; abstract;
+     end;
+
+     TO_let = class(TLetter)
+       procedure Draw (); override;
+     end;
+
+     TC_let = class(TLetter)
+       procedure Draw (); override;
+     end;
+
+     TQ_let = class(TLetter)
+       procedure Draw (); override;
+     end;
+
+implementation
+
+  constructor TLetter.Create;
+  begin
+    inherited Create;
+    x := ax;
+    y := ay;
+    Image := img;
+  end;
+
+end.

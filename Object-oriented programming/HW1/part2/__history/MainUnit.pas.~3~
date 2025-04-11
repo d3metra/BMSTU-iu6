@@ -1,0 +1,60 @@
+unit MainUnit;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls;
+
+type
+  TMainForm = class(TForm)
+    ImageOut: TImage;
+    BeginButton: TButton;
+    EndButton: TButton;
+    Timer: TTimer;
+    procedure FormCreate(Sender: TObject);
+    procedure BeginButtonClick(Sender: TObject);
+    procedure TimerTimer(Sender: TObject);
+    procedure EndButtonClick(Sender: TObject);
+  end;
+
+var
+  MainForm: TMainForm;
+
+implementation
+
+uses Letters;
+
+var t: single = 0.0;
+    O: TO_let;
+    C: TC_let;
+    Q: TQ_let;
+
+{$R *.dfm}
+
+  procedure TMainForm.FormCreate(Sender: TObject);
+  begin
+   ImageOut.Canvas.FillRect(ImageOut.Canvas.ClipRect);
+   ImageOut.Canvas.Pen.Width := 3;
+   O := TO_let.Create(50, round((ImageOut.Height-100)/2), ImageOut, downward);
+   C := TC_let.Create(300, round((ImageOut.Height-100)/2), ImageOut, upward);
+   Q := TQ_let.Create(550, round((ImageOut.Height-100)/2), ImageOut, downward);
+  end;
+
+procedure TMainForm.BeginButtonClick(Sender: TObject);
+  begin
+    Timer.Enabled := true;
+  end;
+
+  procedure TMainForm.EndButtonClick(Sender: TObject);
+  begin
+    Timer.Enabled := false;
+  end;
+
+  procedure TMainForm.TimerTimer(Sender: TObject);
+  begin
+    O.Move ();
+    C.Move ();
+    Q.Move ();
+  end;
+end.

@@ -1,0 +1,27 @@
+unit MainUnit;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls;
+
+type
+  TMainForm = class(TForm)
+    ImageOut: TImage;
+    procedure FormCreate(Sender: TObject);
+  end;
+
+var
+  MainForm: TMainForm;
+
+implementation
+
+{$R *.dfm}
+
+  procedure TMainForm.FormCreate(Sender: TObject);
+  begin
+    ImageOut.Canvas.FillRect(ImageOut.Canvas.ClipRect);
+  end;
+
+end.

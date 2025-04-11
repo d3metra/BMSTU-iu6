@@ -1,0 +1,83 @@
+unit Letters;
+
+interface
+
+Uses Winapi.Windows, Vcl.Graphics, Vcl.ExtCtrls;
+
+type MoveMod = (upward, downward);
+
+type TLetter = class
+     private
+       x, y: integer;
+       Image: TImage;
+       mm: MoveMod;
+     public
+       constructor Create(ax, ay: integer; img: TImage; amm: MoveMod);
+       procedure Move(u: integer);
+       procedure Draw(); virtual; abstract;
+     end;
+
+     TO_let = class(TLetter)
+       procedure Draw(); override;
+     end;
+
+     TC_let = class(TLetter)
+       procedure Draw(); override;
+     end;
+
+     TQ_let = class(TLetter)
+       procedure Draw(); override;
+     end;
+
+implementation
+
+  constructor TLetter.Create;
+  begin
+    inherited Create;
+    x := ax;
+    y := ay;
+    Image := img;
+    mm := amm;
+    Draw ();
+  end;
+
+  procedure TLetter.Move;
+  begin
+    Image.Canvas.Pen.Color := clWhite;
+    Draw;
+    case mm of
+      upward: begin
+                if y > 0
+                  then y := y - u
+                  else mm := downward;
+              end;
+      downward: begin
+                  if y < Image.Height - 100
+                    then y := y + u
+                    else mm := upward;
+                end;
+    end;
+    Image.Canvas.Pen.Color := clBlack;
+    Draw;
+  end;
+
+  procedure TO_let.Draw;
+  begin
+    Image.Canvas.Arc(x, y, x+70, y+100, x+35, y, x+35, y);
+  end;
+
+  procedure TC_let.Draw;
+  begin
+    Image.Canvas.Arc(x, y, x+50, y+100, x+35, y, x+35, y+100);
+  end;
+
+  procedure TQ_let.Draw;
+  var mas: array [1..3] of TPoint;
+  begin
+    Image.Canvas.Arc(x, y, x+80, y+100, x+80, y, x+80, y);
+    mas[1].X := x+45; mas[1].Y := y+100;
+    mas[2].X := x+60; mas[2].Y := y+105;
+    mas[3].X := x+50; mas[3].Y := y+100;
+    Image.Canvas.Polygon(mas);
+  end;
+end.
