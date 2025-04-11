@@ -1,0 +1,16 @@
+program DZ2_nomer3;
+
+{$APPTYPE CONSOLE}
+
+uses
+  System.SysUtils;
+
+var
+begin
+  try
+    { TODO -oUser -cConsole Main : Insert code here }
+  except
+    on E: Exception do
+      Writeln(E.ClassName, ': ', E.Message);
+  end;
+end.

@@ -1,0 +1,23 @@
+Program DZ1_nomer1;
+{$APPTYPE CONSOLE}
+uses
+  SysUtils;
+
+Var y,absolut, otnos:real;
+Begin
+  WriteLn('До преобразований y=',y:20:16);
+  y:= 1;
+  y:= y/6000 ;
+  y:= exp(y);                  {y = e^x}
+  y:= sqrt(y);                 {Квадратный корень}
+  y:= y / 14;
+  y:= 14*y;
+  y:= sqr(y);                  {y = y^2}
+  y:= ln(y);
+  y:= 6000*y;
+  WriteLn('После преобразований =', y:20:16);
+  absolut:=abs(1-y);                {absolut - абсолютная погрешность}
+  otnos:=absolut/(y - absolut);     {ontnos - относительная погрешность}
+  Writeln ('Абсюлютная погрешность: ', absolut:20:18, ' Относительная погрешность: ', otnos:20:18);
+  Readln;
+End.

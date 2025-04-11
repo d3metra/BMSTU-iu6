@@ -1,0 +1,24 @@
+unit root;
+
+interface
+   type f = function (x: extended);
+   procedure ROOT(f);
+
+implementation
+   procedure ROOT
+   var a, b, c: extended;
+   begin
+      a := 0;
+      while f(a)*f(a + 0.1) > 0 do
+           a := a + 0.1;
+      b := a + 0.1;
+      repeat
+            c := (a + b) / 2;
+            if f(a)*f(c) <= 0
+            then b := c
+            else a := c;
+      until (abs(f(c)) <= 0.001;
+      writeln ('Roor x = ', c:5:3);
+   end;
+end.
+

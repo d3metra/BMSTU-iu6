@@ -1,0 +1,53 @@
+unit Pyramid_objects;
+
+interface
+  type Pyramid = object
+           private height, square1: real;
+           public  procedure init(h, S1: real);
+                   procedure print;
+                   function volume: real;
+               end;
+
+  type TrPyramid = object(Pyramid)
+             private square2: real;
+             public  procedure init(h, S1, S2: real);
+                     procedure print;
+                     function volume: real;
+                 end;
+implementation
+//Методы класса-предка
+  procedure Pyramid.init;
+    begin
+      height := h;
+      square1 := S1;
+    end;
+
+  procedure Pyramid.print;
+    begin
+      writeln ('Высота пирамиды: ', height:5:2);
+      writeln ('Площадь нижнего основания пирамиды: ', square1:5:2);
+    end;
+
+  function Pyramid.volume;
+    begin
+      result := height * square1 / 3;
+    end;
+
+//Методы класса-потомка
+  procedure TrPyramid.init;
+    begin
+      inherited init(h, S1);
+      square2 := S2;
+    end;
+
+  procedure TrPyramid.print;
+    begin
+      inherited print;
+      writeln ('Площадь верхнего основания пирамиды: ', square2:5:2);
+    end;
+
+  function TrPyramid.volume;
+    begin
+      result := height * (square1 + square2 + sqrt(square1 * square2)) / 3;
+    end;
+end.

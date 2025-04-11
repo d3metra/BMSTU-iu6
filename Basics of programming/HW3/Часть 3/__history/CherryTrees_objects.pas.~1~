@@ -1,0 +1,60 @@
+unit CherryTrees_objects;
+
+interface
+  type TCherryTree = object
+               private variety: shortstring;
+                       yield: byte;
+               public  procedure init (st: shortstring; y: integer);
+                       procedure info;
+                       procedure pruning;
+                   end;
+
+  type TOrchard = object
+            private trees: array [1..100] of TCherryTree;
+                    num, allyield: word;
+            public  procedure init (n: byte; const t: array of TCherryTree);
+                    procedure info;
+                    procedure allpruning;
+                end;
+implementation
+  procedure TCherryTree.init;
+    begin
+      variety := st;
+      yield := y;
+    end;
+
+  procedure TCherryTree.info;
+    begin
+      writeln ('Сорт дерева: ', variety);
+      writeln ('Урожайность (кг/год): ', yield);
+    end;
+
+  procedure TCherryTree.pruning;
+    begin
+      yield := 1.1*yield;
+    end;
+
+  procedure TOrchard.init;
+    var i: integer;
+    begin
+      num := n;
+      for i := 1 to num do
+        trees[i].init(t[i-1].variety, t[i-1].yield]);
+        allyield := 0
+      for i := 1 to n do
+        allyield := allyield + trees[i].yield;
+    end;
+
+  procedure TOrchard.info;
+    begin
+      writeln ('Кол-во деревьев в саду: ', num);
+      writeln ('Общая урожайность: ', allyield);
+    end;
+
+  procedure TOrchard.allpruning;
+  var i: integer;
+    begin
+      for i := 1 to num do
+        trees[i].pruning;
+    end;
+end.

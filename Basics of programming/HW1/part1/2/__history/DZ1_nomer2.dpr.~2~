@@ -1,0 +1,17 @@
+Program DZ1_nomer2;
+{$APPTYPE CONSOLE}
+Uses SysUtils;
+Var x, y, y1, y2, absolut, otnos: single;
+Begin
+Writeln ('Введите значение переменной x');
+Readln (x);
+y1:=(exp(x)-exp(-x))*0.5;
+y2:=(exp(X)+exp(-x))*0.5;
+Writeln ('y1 = ', y1:20:16, '     y2 = ', y2:20:16);
+y:=sqr(y2)-sqr(y1);
+Writeln ('ch^2 x - sh^2 x =', y:20:16);
+absolut:=abs(1 - y);              {absolut - аболютная погрешность}
+otnos:=absolut/abs(y-absolut);    {otnos - относительная погрешность}
+Writeln ('Абсолютная погрешность:', absolut:20:16, '     Относительная погрешность:', otnos:20:16);
+Readln;
+End.

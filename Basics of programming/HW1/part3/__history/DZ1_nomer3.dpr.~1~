@@ -1,0 +1,22 @@
+Program DZ1_nomer3;
+{$APPTYPE CONSOLE}
+Var eps, x, S, absolut: real;
+    k:integer;
+Begin
+Writeln ('Рассчитать сумму ряда с точностью до:');
+Readln (eps);
+S:=0;
+k:=0;
+repeat
+k:=k+1;
+x:=1/sqr(k)/sqr(k+1);
+S:=S+x;
+until x<eps;
+Writeln ('Сумма ряда: ', S:20:16, '     Кол-во итераций:', k);
+absolut:=abs(S - (sqr(pi)/3 - 3));                                {absolut - абсолютная погрешность}
+if absolut<=eps                                                   {Проверка точности расчётов}
+    then Writeln ('Сумма ряда высчитана с заданной точностью')
+    else Writeln ('Сумма ряда высчитана недостаточно точно');
+Readln;
+End.
+

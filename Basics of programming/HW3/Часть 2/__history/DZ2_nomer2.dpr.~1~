@@ -1,0 +1,26 @@
+program DZ2_nomer2;
+
+{$APPTYPE CONSOLE}
+
+uses
+  System.SysUtils,
+  Pyramid_objects in 'D:\Programms\Delphi\Pyramid_objects.pas';
+
+var Pr: Pyramid; TPr: TrPyramid;
+    h, S1, S2: real;
+
+begin
+  write ('Введите высоту и площадь нижнего основания пирамиды: ');
+  read (h, S1);
+  writeln ('//Стандартная пирамида//');
+  Pr.init (h, S1);
+  Pr.print;
+  writeln ('Объём пирамиды: ', Pr.volueme:7:2);
+  write ('Введите высоту, площади нижнего и верхнего оснований усеченной пирамиды: ');
+  read (h, S1, S2);
+  writeln ('//Усеченная пирамида//');
+  TPr.init (S2);
+  TPr.print;
+  writeln ('Объём усечённой пирамиды: ', TPr.volueme:7:2);
+  readln
+end.

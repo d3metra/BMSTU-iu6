@@ -1,0 +1,22 @@
+program DZ2_nomer4;
+{$APPTYPE CONSOLE}
+
+uses System.SysUtils, RFun;
+
+var x: real;
+  function F1 (x: real): real;
+    begin
+       F1 := sqr(ln(x)) - 1;
+    end;
+  function F2 (x: real): real;
+    begin
+       F2 := sin(x) + cos(x);
+    end;
+
+begin
+writeln ('ћинимальный положительный корень уравнени€ sqr(ln(x)) = 1');
+ROOT (F1);
+writeln ('ћинимальный положительный корень уравнени€ sin(x) + cos(x) = 0');
+ROOT (F2);
+readln;
+end.

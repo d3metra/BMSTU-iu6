@@ -1,0 +1,23 @@
+program DZ3_nomer3;
+
+{$APPTYPE CONSOLE}
+
+uses
+  System.SysUtils,
+  CherryTrees_objects in 'D:\Programms\Delphi\CherryTrees_objects.pas';
+
+var Tree: TCherryTree; Orc: TOrchard;
+    t: array [1..100] of TCherryTree;
+    i, y,  n : integer; st: shortstring;
+
+begin
+//Работа с одиночным деревом (объектом класса TCherryTree)
+  write ('Введите сорт дерева: ');
+  read (st, y);
+  Tree.init (st, y);
+  Tree.info;
+  Tree.pruning;
+  Writeln ('Состояние дерева после обрезки: ');
+  Tree.info;
+  readln; readln;
+end.

@@ -1,0 +1,40 @@
+program DZ2_nomer1;
+{$APPTYPE CONSOLE}
+
+uses System.SysUtils;
+
+var a: array [0..100] of integer;
+    n,i,j,b:integer;
+
+begin
+{Ввод одномерного массива}
+write ('Введите n<=100 - кол-во элементов одномерного массива: ');
+readln (n);
+randomize;
+writeln ('Исходный массив:');
+for i := 1 to n do
+   begin
+        a[i] := random(101) - 50;
+        writeln ('a[', i, '] = ', a[i]);
+   end;
+
+{Сортировка массива}
+for i := 2 to n do
+   begin
+        b := a[i];
+        a[0] := b;
+        j := i - 1;
+        while abs(a[j]) < abs(b) do
+             begin
+                  a[j+1] := a[j];
+                  j := j - 1;
+             end;
+        a[j+1] := b;
+   end;
+
+{Вывод отсортированного массива}
+writeln ('Отсортированный массив:');
+for i := 1 to n do
+   writeln ('a[', i, '] = ', a[i]);
+readln;
+end.

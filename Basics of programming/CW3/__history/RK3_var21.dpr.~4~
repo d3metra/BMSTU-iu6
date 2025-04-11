@@ -1,0 +1,86 @@
+program RK3_var21;
+
+{$APPTYPE CONSOLE}
+
+uses
+  System.SysUtils;
+
+type point = ^element;
+     element = record
+        num: integer;
+        pnt: point;
+     end;
+
+var first, q, last: point; key: boolean;
+    st: shortstring; code: integer;
+
+begin
+//Создание и вывод динамического списка
+  key := true;
+  first := nil;
+  q := nil;
+  writeln ('Введите целые числа ' +
+              '(для завершения введите End):');
+  readln (st);
+  if st <> 'End'
+    then begin
+            new (first);
+            val (st, first^.num, code);
+            first^.pnt := nil;
+            readln (st);
+            while st <> 'End' do
+               begin
+                  new (q);
+                  val (st, q^.num, code);
+                  q^.pnt := first;
+                  first := q;
+                  readln (st);
+               end;
+         end;
+  writeln ('Исходный список:');
+  q := first;
+  if q = nil
+     then begin
+             writeln ('Список пуст');
+             key := false;
+          end
+     else while q <> nil do
+                begin
+                   write (q^.num:5);
+                   q := q^.pnt;
+                end;
+  writeln;
+//Обмен местами первого и последнего элемента списка
+  if key
+    then begin
+            q := first;
+            while q^.pnt^.pnt <> nil do
+               q := q^.pnt;
+            last := q^.pnt;
+            last^.pnt := first^.pnt;
+            first^.pnt := nil;
+            q^.pnt := first;
+            q := first;
+            first := last;
+            last := q;
+            writeln ('Список после омена местами первого и последнего ' +
+                          'элементов списка:');
+            q := first;
+            while q <> nil do
+               begin
+                  write (q^.num:5);
+                  q := q^.pnt;
+               end;
+         end;
+  readln;
+
+//Освобождение памяти
+  q := first;
+  while q <> nil do
+     begin
+        q := q^.pnt;
+        dispose (first);
+        first := q;
+     end;
+end.
+

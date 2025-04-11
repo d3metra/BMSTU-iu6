@@ -1,0 +1,11 @@
+program DZ2_nomer4;
+{$APPTYPE CONSOLE}
+
+uses
+  System.SysUtils;
+
+root;
+
+begin
+
+end.

@@ -1,0 +1,75 @@
+program RK2;
+{$APPTYPE CONSOLE}
+
+uses
+  System.SysUtils;
+
+type mas = array [1..100, 1..100] of integer;
+
+var a: mas;
+    i, j, j_max, k, n: integer;
+
+procedure offsetmax (a: mas);
+  begin
+    for i := 1 to n-1 do
+       begin
+         j_max := 1;
+         for j := 1 to n-i do
+         if a[i,j] > a[i,j_max]
+           then j_max := j;
+           writeln ('Максимальный элемент до побочной диагонали ', i, ' строки: ', a[i,j_max]);
+           a[i,n-i+1] := a[i,j_max];
+       end;
+  end;
+
+procedure deletingrows (a: mas);
+  begin
+    k := 0;
+for i := 1 to n do
+   if a[i,i] >=0
+   then begin
+             k := k + 1;
+             for j := 1 to n do
+                a[k,j] := a[i,j];
+        end;
+for i := 1 to k do
+   begin
+        for j := 1 to n do
+           write (a[i,j]:5);
+        writeln;
+   end;
+  end;
+
+begin
+//Генерация исходной матрицы
+randomize;
+write ('Введите n<=100 - размерность квадратной матрицы: ');
+readln (n);
+writeln ('Исходная матрица: ');
+for i := 1 to n do
+   begin
+        for j := 1 to n do
+           begin
+                a[i,j] := random(201) - 100;
+                write (a[i,j]:5);
+           end;
+        writeln;
+   end;
+writeln;
+
+//Действия с побочной диагональю
+offsetmax (a);
+writeln ('Матрица после преобразований, связанных с побочной диагональю:');
+for i := 1 to n do
+   begin
+        for j := 1 to n do
+           write (a[i,j]:5);
+        writeln;
+   end;
+writeln;
+
+//Удаление строк матрицы
+writeln ('Матрица после удаления строк, элемент главной диагонали которых отрицателен:');
+deletingrows (a);
+readln;
+end.

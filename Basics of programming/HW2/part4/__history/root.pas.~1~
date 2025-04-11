@@ -1,0 +1,26 @@
+unit root;
+
+interface
+   type f = function (x: real);
+   procedure ROOT(f);
+
+implementation
+   procedure ROOT
+   var a, b, c: real;
+   begin
+   a := 0;
+   repeat
+    c := (a + b) / 2;
+    if f(a)*f(c) <= 0
+      then b := c
+      else a := c;
+
+
+
+
+   until (abs(f(c)) <= 0.001;
+
+
+
+end.
+
